@@ -1,1 +1,5 @@
-
+<?php
+$newEmail = $_POST['email'];
+$sql = "UPDATE students SET email='$newEmail'";
+mysqli_query($conn,$sql);
+?>
