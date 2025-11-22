@@ -1,2 +1,7 @@
-<form method="GET" action="save.php"><input
-name="email"></form>
+<?php
+// Error: Used a $_POST
+// $email = $_POST['email'];
+
+ // Use $_GET for form method.
+$email = $_GET['email'];
+?>
