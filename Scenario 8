@@ -9,7 +9,7 @@ echo $row['email'];
 <?php
 $conn = mysqli_connect("localhost","root","","class_db");
 
-// No loop that's why isa lang ang na-print na result.
+// ERROR: No loop that's why isa lang ang na-print na result.
 // $res = mysqli_query($conn,"SELECT * FROM students");
 // $row = mysqli_fetch_assoc($res);
 // echo $row['email']; // prints first only
