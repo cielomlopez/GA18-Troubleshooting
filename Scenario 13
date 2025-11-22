@@ -1,5 +1,13 @@
 <?php
 $newEmail = $_POST['email'];
-$sql = "UPDATE students SET email='$newEmail'";
-mysqli_query($conn,$sql);
+$id = $_POST['id'];
+
+// Error:No WHERE clause that’s why nag-uupdate lahat ng rows
+// $sql = "UPDATE students SET email='$newEmail'";
+// mysqli_query($conn,$sql);
+
+// Add the WHERE clause to specified which record to be updated
+$sql = "UPDATE students SET email='$newEmail' WHERE id=$id";
+$res = mysqli_query($conn,$sql);
+*/
 ?>
