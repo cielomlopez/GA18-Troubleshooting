@@ -6,3 +6,14 @@ $res = mysqli_query($conn, $sql);
 $r = mysqli_fetch_assoc($res);
 echo $r['first_name'];
 ?>
+
+<?php
+$conn = mysqli_connect("localhost", "root", "", "class_db");
+$id = $_GET['id'];
+$sql = "SELECT * FROM students WHERE id = $id";
+$res = mysqli_query($conn, $sql);
+$r = mysqli_fetch_assoc($res);
+echo $r['first_name'];
+?>
+
+// $_POST should be $_GET since the code is about viewing/searching the data with the use of URL.
