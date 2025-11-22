@@ -1,8 +1,26 @@
 <?php
 $conn = mysqli_connect("localhost","root","","class_db");
+
+ // missing quotes in $email, prone on SQL error
+// $sql = "UPDATE students SET email=$email WHERE id=$id";
+
+// no error checking, kaya kahit fail magpi-print ng "Updated!"
+// $res = mysqli_query($conn, $sql);
+
+// echo "Updated!";
+
 $id = $_POST['id'];
 $email = $_POST['email'];
-$sql = "UPDATE students SET email=$email WHERE id=$id";
-$res = mysqli_query($conn, $sql);
-echo "Updated!";
+
+// lagyan ng quotes and gumamit ng prepared statement para safe
+$stmt = $conn->prepare("UPDATE students SET email=? WHERE id=?");
+$stmt->bind_param("si", $email, $id);
+$success = $stmt->execute();
+
+// maglagay ng error checking
+if($success) {
+    echo "Updated!";
+} else {
+    echo "Error: " . $stmt->error;
+}
 ?>
