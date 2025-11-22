@@ -1,7 +1,12 @@
 <?php
 $conn = mysqli_connect("localhost","root","","class_db");
-$email = $_POST['emial'];
-// misspelled
+
+// Undefined index error because of typo input name.
+// $email = $_POST['emial']; 
+
+// right code
+$email = $_POST['email'];
+
 $sql = "SELECT * FROM students WHERE email='$email'";
 $res = mysqli_query($conn, $sql);
 ?>
