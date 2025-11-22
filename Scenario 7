@@ -1,10 +1,10 @@
 <?php
 $conn = mysqli_connect("localhost","root","","class_db");
 
- // missing quotes in $email, prone on SQL error
+ // Error: missing quotes in $email, prone on SQL error
 // $sql = "UPDATE students SET email=$email WHERE id=$id";
 
-// no error checking, kaya kahit fail magpi-print ng "Updated!"
+// Error: no error checking, kaya kahit fail magpi-print ng "Updated!"
 // $res = mysqli_query($conn, $sql);
 
 // echo "Updated!";
