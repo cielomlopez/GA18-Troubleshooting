@@ -12,12 +12,12 @@ $fname = $_POST['fname']; // exact input
 //must be single quotes to become string in the SQL
 $sql = "SELECT * FROM students WHERE first_name = '$fname'";
 
+$res = mysqli_query($conn, $sql);
+?>
+
 /*
 I've added single quotes in the $fname. 
 no quotes, SQL reads the value as column name causing error. 
 if 'value', SQL knows it's string search. 
 so searching name using first_name as base input of user works perfectly.
 */
-
-$res = mysqli_query($conn, $sql);
-?>
