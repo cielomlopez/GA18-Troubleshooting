@@ -1,1 +1,4 @@
-
+<?php$page = $_GET['page'];
+$limit = 5;$offset = $page * $limit;
+$sql = "SELECT * FROM students LIMIT $offset, $limit";
+?>
