@@ -1,5 +1,17 @@
 <?php
 $conn = mysqli_connect("localhost","root","","class_db");
-$age = $_GET['age'];$sql = "SELECT * FROM students WHERE age = $age";
-$res = mysqli_query($conn, $sql);
+
+// should use prepared statement to avoid SQL injection 
+// $age = $_GET['age'];
+// $sql = "SELECT * FROM students WHERE age = $age";
+
+$age = $_GET['age'];
+$stmt = $conn->prepare("SELECT * FROM students WHERE age = ?");
+$stmt->bind_param("i", $age); 
+
+// "i" means integer
+$stmt->execute();
+$res = $stmt->get_result();
+
+// All records may come out if hindi po ginamitan ng prepared statement.
 ?>
