@@ -1,7 +1,7 @@
 <?php
 $conn = mysqli_connect("localhost","root","","class_db");
 
-// direct use of $_GET['id'] sa query is prone to SQL injection
+// Error: direct use of $_GET['id'] sa query is prone to SQL injection
 // $sql = "DELETE FROM students WHERE id = " . $_GET['id'];
 
 // I use intval() to force integer
