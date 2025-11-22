@@ -1,4 +1,9 @@
 <?php
-$id = $_POST['id'];
+// Error: Used a $_POST instead of GET.
+// $id = $_POST['id'];
+
+// Use a $_GET to identify the id from URL
+$id = $_GET['id'];
 ?>
+
 <a href="view.php?id=3">View Student</a>
